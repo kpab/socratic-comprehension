@@ -27,6 +27,12 @@ Claude Code のマーケットプレイス経由で追加できます。
 /plugin install socratic-comprehension
 ```
 
+[skills.sh](https://skills.sh) の CLI（[vercel-labs/skills](https://github.com/vercel-labs/skills)）からも追加できます。インストール不要で `npx` から実行できます。
+
+```
+npx skills add kpab/socratic-comprehension
+```
+
 または、このリポジトリの `skills/socratic-comprehension/` を、お使いのスキルディレクトリ（個人用なら `~/.claude/skills/`、プロジェクト用なら `<project>/.claude/skills/`）に置いても使えます。
 
 ## 構成
