@@ -7,7 +7,7 @@
   "plugins": [
     {
       "name": "socratic-comprehension",
-      "description": "難しい文章・論文・概念を、ユーザー自身が自分の言葉で説明できるレベルまで理解するのを助けるソクラテス式の壁打ちスキル。要約や代筆はせず、論理をノードに分解して1つずつ言語化を促し、ズレを名指しで指摘する。",
+      "description": "A Socratic sparring partner that helps you understand difficult texts, papers, and concepts well enough to explain them in your own words. It never summarizes or ghost-writes — it breaks the logic into nodes, makes you restate each one, and names exactly where your wording drifted.",
       "version": "0.1.0",
       "author": { "name": "kpab" },
       "source": "./",
