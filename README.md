@@ -1,41 +1,61 @@
 # socratic-comprehension
 
-難しい文章・論文・概念を、**あなた自身が「自分の言葉で説明できる」レベルまで理解する**のを助ける、ソクラテス式の壁打ち Agent Skill です。
+A Socratic sparring-partner Agent Skill that helps you understand a difficult text, paper, or concept **to the point where you can explain it in your own words.**
 
-要約も代筆もしません。理解は、自分で論理を組み直して言語化したときに初めて起きる — だからこのスキルは答えを渡さず、あなたに再構成させ、その言語化に的確な突っ込みを入れます。
+It never summarizes or ghost-writes for you. Understanding only happens when you rebuild the logic yourself and put it into words — so this skill withholds the answer, makes you reconstruct, and pushes back sharply on how you phrase it.
 
-## できること
+## What it does
 
-- **目的の切り分け** — 「理解したいのか／成果物が欲しいのか」をまず見極める
-- **全体像を先に提示** — 対象を論証ステップ（ノード）に分解し、道筋を見せてから始める
-- **1ノードずつ壁打ち** — 「あなたの言葉で言い直して」と促し、答えは先に書かない
-- **ズレた一語を名指し** — 原意とズレた箇所をふわっとではなく具体的に指摘する
-- **急所を握らせる** — 論の土台になっている前提・中心の緊張を、あなた自身に解かせる
-- **用語テスト** — 原文を借りずに一文で定義できるか試す
-- **批評レイヤー** — 「記述」と「ポジショントーク」を切り分け、違和感・反論を引き出す（理解と同意は別）
+- **Separates the goal first** — figures out whether you want to *understand* or just want a *deliverable*
+- **Shows the whole shape first** — breaks the target into reasoning steps (nodes) and lays out the path before starting
+- **One node at a time** — prompts "restate this in your own words" and never writes the answer first
+- **Names the drifting word** — pinpoints exactly where your wording slipped from the original meaning, not a vague "a little off"
+- **Makes you grasp the crux** — has you resolve the underlying premise and central tension yourself
+- **Term test** — checks whether you can define each key term in one sentence without borrowing the original phrasing
+- **Critique layer** — separates "description" from "position-taking" and draws out your doubts and counterarguments (understanding ≠ agreement)
 
-## 発動するとき
+## When it activates
 
-「これどういうこと」「自分のために理解したい」「腹落ちさせたい」「自分用にまとめたい」「噛み砕きたい」のように、理解・腹落ち・自分用の整理を求めたときに起動します。逆に「要約して」「記事にして」と代筆を明確に求めた場合は起動せず、まず目的を一度だけ確認します。
+It triggers when you ask to understand or internalize something for yourself — e.g. "what does this mean", "I want to understand this myself", "help me make this click", "I want to organize this for my own use", "break this down". It also fires on the Japanese equivalents (「これどういうこと」「腹落ちさせたい」「噛み砕きたい」など). It does **not** fire when you clearly ask for a deliverable ("summarize this", "write an article") — instead it confirms your goal once before proceeding.
 
-## インストール
+## Installation
 
-Claude Code のマーケットプレイス経由で追加できます。
+Pick whichever fits your setup. For a **personal** install (available in every project), use a global/user-level option.
+
+### Claude Code plugin (marketplace)
 
 ```
 /plugin marketplace add kpab/socratic-comprehension
 /plugin install socratic-comprehension
 ```
 
-[skills.sh](https://skills.sh) の CLI（[vercel-labs/skills](https://github.com/vercel-labs/skills)）からも追加できます。インストール不要で `npx` から実行できます。
+### skills.sh CLI (`npx skills`)
+
+Via the [skills.sh](https://skills.sh) CLI ([vercel-labs/skills](https://github.com/vercel-labs/skills)). No install needed — run it with `npx`.
 
 ```
+# Personal (user-level) install — works in every project:
+npx skills add kpab/socratic-comprehension --global
+
+# Or project-local (installs into the current directory):
 npx skills add kpab/socratic-comprehension
 ```
 
-または、このリポジトリの `skills/socratic-comprehension/` を、お使いのスキルディレクトリ（個人用なら `~/.claude/skills/`、プロジェクト用なら `<project>/.claude/skills/`）に置いても使えます。
+> **Note:** without `--global`, the CLI installs **project-local** into the directory you run it from (`./.agents/skills/` plus a `.claude/skills/` symlink), *not* into `~/.claude/skills/`. If the skill "doesn't show up," you most likely want `--global`.
 
-## 構成
+### Manual copy
+
+Copy `skills/socratic-comprehension/` into your skills directory:
+
+```
+# Personal:
+~/.claude/skills/socratic-comprehension/
+
+# Project-only:
+<project>/.claude/skills/socratic-comprehension/
+```
+
+## Structure
 
 ```
 .
@@ -47,6 +67,6 @@ npx skills add kpab/socratic-comprehension
         └── SKILL.md
 ```
 
-## ライセンス
+## License
 
 MIT © 2026 kpab
